@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{63AD52EE-80D6-4987-B58B-EC5363B1B92F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SuperMarioYeah</RootNamespace>
+    <AssemblyName>SuperMarioYeah</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>Windows</MonoGamePlatform>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>BasicDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Collectable\AbstractCollectable.cs" />
+    <Compile Include="Collectable\Gun.cs" />
+    <Compile Include="Collectable\ICollectable.cs" />
+    <Compile Include="Collectable\IPowerUp.cs" />
+    <Compile Include="Collectable\TNTPowerUp.cs" />
+    <Compile Include="Collectable\Fireflower.cs" />
+    <Compile Include="Collectable\Mushroom.cs" />
+    <Compile Include="Collectable\Coin.cs" />
+    <Compile Include="Collectable\Star.cs" />
+    <Compile Include="Collectable\OneUp.cs" />
+    <Compile Include="Collision\BlockCollisionInstance.cs" />
+    <Compile Include="Collision\BoundingBox.cs" />
+    <Compile Include="Collision\EntityCollisionInstance.cs" />
+    <Compile Include="Collision\Direction.cs" />
+    <Compile Include="Collision\ICollidable.cs" />
+    <Compile Include="Collision\ICollisionInstance.cs" />
+    <Compile Include="Collision\IEntityCollidable.cs" />
+    <Compile Include="Collision\IPolygon.cs" />
+    <Compile Include="Actions\ActionUtil.cs" />
+    <Compile Include="Enemies\AbstractEnemy.cs" />
+    <Compile Include="Enemies\EnemyGoomba.cs" />
+    <Compile Include="Enemies\EnemyKoopa.cs" />
+    <Compile Include="Enemies\IEnemy.cs" />
+    <Compile Include="Entity\Flag.cs" />
+    <Compile Include="Entity\Flagpole.cs" />
+    <Compile Include="Entity\Mario.cs" />
+    <Compile Include="Fonts.cs" />
+    <Compile Include="Input\InputActions.cs" />
+    <Compile Include="MarioGame.cs" />
+    <Compile Include="Input\GamePadController.cs" />
+    <Compile Include="Input\IController.cs" />
+    <Compile Include="Input\KeyboardController.cs" />
+    <Compile Include="Particles\CoinParticle.cs" />
+    <Compile Include="Particles\DeadMarioParticle.cs" />
+    <Compile Include="Particles\PipeMarioParticle.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Particles\BrokenBlockParticle.cs" />
+    <Compile Include="Projectiles\Bullet.cs" />
+    <Compile Include="Projectiles\TNTProjectile.cs" />
+    <Compile Include="Projectiles\Fireball.cs" />
+    <Compile Include="Projectiles\AbstractProjectile.cs" />
+    <Compile Include="Projectiles\IProjectile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entity\AbstractEntity.cs" />
+    <Compile Include="Realm\Blocks\Block.cs" />
+    <Compile Include="Realm\Blocks\CoinBrickBlock.cs" />
+    <Compile Include="Realm\Blocks\MysteryPowerUpBlock.cs" />
+    <Compile Include="Realm\Blocks\BrickBlock.cs" />
+    <Compile Include="Realm\Blocks\CrackedBlock.cs" />
+    <Compile Include="Realm\Blocks\HiddenBlock.cs" />
+    <Compile Include="Realm\Blocks\StarBrickBlock.cs" />
+    <Compile Include="Realm\HUD.cs" />
+    <Compile Include="Realm\Camera.cs" />
+    <Compile Include="Collision\IBlockCollidable.cs" />
+    <Compile Include="Realm\LevelSelector.cs" />
+    <Compile Include="Realm\SavedGame.cs" />
+    <Compile Include="Realm\TileEntity\AbstractTileEntity.cs" />
+    <Compile Include="Realm\TileEntity\CoinTileEntity.cs" />
+    <Compile Include="Realm\TileEntity\ITileEntity.cs" />
+    <Compile Include="Realm\Blocks\MysteryCoinBlock.cs" />
+    <Compile Include="Realm\Blocks\PipeBlock.cs" />
+    <Compile Include="Realm\Blocks\PlatformBlock.cs" />
+    <Compile Include="Realm\Blocks\UsedBlock.cs" />
+    <Compile Include="Realm\TileEntity\PipeTileEntity.cs" />
+    <Compile Include="Realm\World.cs" />
+    <Compile Include="Realm\WorldCollider.cs" />
+    <Compile Include="Realm\EndingAnimation.cs" />
+    <Compile Include="Realm\WorldLoader.cs" />
+    <Compile Include="Sounds\SoundLoader.cs" />
+    <Compile Include="Sprites\AbstractSprite.cs" />
+    <Compile Include="Sprites\AnimatedSprite.cs" />
+    <Compile Include="Sprites\IScreenDrawable.cs" />
+    <Compile Include="Sprites\MarioSprite.cs" />
+    <Compile Include="Sprites\Textures.cs" />
+    <Compile Include="Sprites\IDrawable.cs" />
+    <Compile Include="Entity\IEntity.cs" />
+    <Compile Include="Sprites\ISprite.cs" />
+    <Compile Include="Entity\ParametricEntity.cs" />
+    <Compile Include="Entity\StaticEntity.cs" />
+    <Compile Include="Sprites\StaticSprite.cs" />
+    <Compile Include="Util\ISaveable.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Code_Reviews\Maintainability_Template.txt" />
+    <Content Include="Code_Reviews\Readability_Template.txt" />
+    <Content Include="Code_Reviews\Sprint2\Readability_EvanHanawalt.txt" />
+    <Content Include="Code_Reviews\Sprint2\Maintainability_EvanHanawalt.txt" />
+    <Content Include="Code_Reviews\Sprint3\Maintainability_MichaelCrawshaw.txt" />
+    <Content Include="Code_Reviews\Sprint3\Maintainability_EvanHanawalt.txt" />
+    <Content Include="Code_Reviews\Sprint3\Maintainability_ScottFasone.txt" />
+    <Content Include="Code_Reviews\Sprint3\Readability_TimAris.txt" />
+    <Content Include="Code_Reviews\Sprint3\Readability_MichaelCrawshaw.txt" />
+    <Content Include="Code_Reviews\Sprint3\Readability_EvanHanawalt.txt" />
+    <Content Include="Code_Reviews\Sprint3\Readability_ScottFasone.txt" />
+    <Content Include="Code_Reviews\Sprint3\Maintainability_TimAris.txt" />
+    <Content Include="Code_Reviews\Sprint5\Maintainability_Evan_Hanawalt.txt" />
+    <Content Include="Code_Reviews\Sprint5\Maintainability_Scott_Fasone.txt" />
+    <Content Include="Code_Reviews\Sprint5\Maintainability_Tim_Aris.txt" />
+    <Content Include="Code_Reviews\Sprint5\Readability_Evan_Hanawalt.txt" />
+    <Content Include="Code_Reviews\Sprint5\Readability_ScottFasone.txt" />
+    <Content Include="Code_Reviews\Sprint5\Readability_Tim_Aris.txt" />
+    <Content Include="Code_Reviews\Sprint6\Maintainability_Scott_Fasone.txt" />
+    <Content Include="Code_Reviews\Sprint6\Readability_ScottFasone.txt" />
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+    <None Include="1 - 1.csv" />
+    <None Include="1 - 1 Modified.csv" />
+    <None Include="app.manifest" />
+    <None Include="Sprint3.csv" />
+    <None Include="TNT.csv" />
+    <None Include="TNT2.csv" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

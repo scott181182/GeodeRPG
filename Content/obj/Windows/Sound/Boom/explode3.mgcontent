@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>D:/Documents/School/Classes/CSE3902/Projects/CSE3902_SU2017_Project/SuperMarioYeah/SuperMarioYeah/Content/Sound/Boom/explode3.ogg</SourceFile>
+  <SourceTime>2015-12-19T12:23:45.1234322-05:00</SourceTime>
+  <DestFile>D:/Documents/School/Classes/CSE3902/Projects/CSE3902_SU2017_Project/SuperMarioYeah/SuperMarioYeah/Content/bin/Windows/Sound/Boom/explode3.xnb</DestFile>
+  <DestTime>2017-07-20T11:48:47.7122163-04:00</DestTime>
+  <Importer>OggImporter</Importer>
+  <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
+  <Processor>SoundEffectProcessor</Processor>
+  <ProcessorTime>2017-03-01T10:05:36-05:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>
