@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
   <PropertyGroup>
@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>f816f6b6-c3fe-4e56-8970-24051e63c7d7</ProjectGuid>
+    <ProjectGuid>{F816F6B6-C3FE-4E56-8970-24051E63C7D7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GeodeRPG</RootNamespace>
@@ -23,7 +23,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>false</Prefer32Bit>
-	<WarningLevel>4</WarningLevel>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
@@ -33,7 +33,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>false</Prefer32Bit>
-	<WarningLevel>4</WarningLevel>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Icon.ico</ApplicationIcon>
@@ -42,64 +42,142 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Collectable\AbstractCollectable.cs" />
+    <Compile Include="Collectable\Coin.cs" />
+    <Compile Include="Collectable\Fireflower.cs" />
+    <Compile Include="Collectable\Gun.cs" />
+    <Compile Include="Collectable\ICollectable.cs" />
+    <Compile Include="Collectable\IPowerUp.cs" />
+    <Compile Include="Collectable\Mushroom.cs" />
+    <Compile Include="Collectable\OneUp.cs" />
+    <Compile Include="Collectable\Star.cs" />
+    <Compile Include="Collectable\TNTPowerUp.cs" />
+    <Compile Include="Collision\BlockCollisionInstance.cs" />
+    <Compile Include="Collision\BoundingBox.cs" />
+    <Compile Include="Collision\Direction.cs" />
+    <Compile Include="Collision\EntityCollisionInstance.cs" />
+    <Compile Include="Collision\IBlockCollidable.cs" />
+    <Compile Include="Collision\ICollidable.cs" />
+    <Compile Include="Collision\ICollisionInstance.cs" />
+    <Compile Include="Collision\IEntityCollidable.cs" />
+    <Compile Include="Collision\IPolygon.cs" />
+    <Compile Include="Enemies\AbstractEnemy.cs" />
+    <Compile Include="Enemies\EnemyGoomba.cs" />
+    <Compile Include="Enemies\EnemyKoopa.cs" />
+    <Compile Include="Enemies\IEnemy.cs" />
+    <Compile Include="Entity\AbstractEntity.cs" />
+    <Compile Include="Entity\Flag.cs" />
+    <Compile Include="Entity\Flagpole.cs" />
+    <Compile Include="Entity\IEntity.cs" />
+    <Compile Include="Entity\Mario.cs" />
+    <Compile Include="Entity\ParametricEntity.cs" />
+    <Compile Include="Entity\StaticEntity.cs" />
+    <Compile Include="Fonts.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Input\GamePadController.cs" />
+    <Compile Include="Input\IController.cs" />
+    <Compile Include="Input\InputActions.cs" />
+    <Compile Include="Input\KeyboardController.cs" />
+    <Compile Include="Particles\BrokenBlockParticle.cs" />
+    <Compile Include="Particles\CoinParticle.cs" />
+    <Compile Include="Particles\DeadMarioParticle.cs" />
+    <Compile Include="Particles\PipeMarioParticle.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Projectiles\AbstractProjectile.cs" />
+    <Compile Include="Projectiles\Bullet.cs" />
+    <Compile Include="Projectiles\Fireball.cs" />
+    <Compile Include="Projectiles\IProjectile.cs" />
+    <Compile Include="Projectiles\TNTProjectile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Realm\Blocks\Block.cs" />
+    <Compile Include="Realm\Blocks\BrickBlock.cs" />
+    <Compile Include="Realm\Blocks\CoinBrickBlock.cs" />
+    <Compile Include="Realm\Blocks\CrackedBlock.cs" />
+    <Compile Include="Realm\Blocks\HiddenBlock.cs" />
+    <Compile Include="Realm\Blocks\MysteryCoinBlock.cs" />
+    <Compile Include="Realm\Blocks\MysteryPowerUpBlock.cs" />
+    <Compile Include="Realm\Blocks\PipeBlock.cs" />
+    <Compile Include="Realm\Blocks\PlatformBlock.cs" />
+    <Compile Include="Realm\Blocks\StarBrickBlock.cs" />
+    <Compile Include="Realm\Blocks\UsedBlock.cs" />
+    <Compile Include="Realm\Camera.cs" />
+    <Compile Include="Realm\EndingAnimation.cs" />
+    <Compile Include="Realm\HUD.cs" />
+    <Compile Include="Realm\LevelSelector.cs" />
+    <Compile Include="Realm\SavedGame.cs" />
+    <Compile Include="Realm\TileEntity\AbstractTileEntity.cs" />
+    <Compile Include="Realm\TileEntity\CoinTileEntity.cs" />
+    <Compile Include="Realm\TileEntity\ITileEntity.cs" />
+    <Compile Include="Realm\TileEntity\PipeTileEntity.cs" />
+    <Compile Include="Realm\World.cs" />
+    <Compile Include="Realm\WorldCollider.cs" />
+    <Compile Include="Realm\WorldLoader.cs" />
+    <Compile Include="Sounds\SoundLoader.cs" />
+    <Compile Include="Sprites\AbstractSprite.cs" />
+    <Compile Include="Sprites\AnimatedSprite.cs" />
+    <Compile Include="Sprites\IDrawable.cs" />
+    <Compile Include="Sprites\IScreenDrawable.cs" />
+    <Compile Include="Sprites\ISprite.cs" />
+    <Compile Include="Sprites\MarioSprite.cs" />
+    <Compile Include="Sprites\StaticSprite.cs" />
+    <Compile Include="Sprites\Textures.cs" />
+    <Compile Include="Util\Actions.cs" />
+    <Compile Include="Util\ISaveable.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
-       <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\MonoGame.Framework.dll</HintPath>
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\MonoGame.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
-	<EmbeddedResource Include="Icon.bmp" />
+    <EmbeddedResource Include="Icon.bmp" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
-	<None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x86\SDL2.dll">
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x86\SDL2.dll">
       <Link>x86\SDL2.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x64\SDL2.dll">
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x64\SDL2.dll">
       <Link>x64\SDL2.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x86\soft_oal.dll">
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x86\soft_oal.dll">
       <Link>x86\soft_oal.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x64\soft_oal.dll">
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x64\soft_oal.dll">
       <Link>x64\soft_oal.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-		<None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x86\libSDL2-2.0.so.0">
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x86\libSDL2-2.0.so.0">
       <Link>x86\libSDL2-2.0.so.0</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x64\libSDL2-2.0.so.0">
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x64\libSDL2-2.0.so.0">
       <Link>x64\libSDL2-2.0.so.0</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x86\libopenal.so.1">
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x86\libopenal.so.1">
       <Link>x86\libopenal.so.1</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x64\libopenal.so.1">
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x64\libopenal.so.1">
       <Link>x64\libopenal.so.1</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\libSDL2-2.0.0.dylib">
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\libSDL2-2.0.0.dylib">
       <Link>libSDL2-2.0.0.dylib</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\libopenal.1.dylib">
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\libopenal.1.dylib">
       <Link>libopenal.1.dylib</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\MonoGame.Framework.dll.config">
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\MonoGame.Framework.dll.config">
       <Link>MonoGame.Framework.dll.config</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
